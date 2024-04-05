@@ -1,0 +1,78 @@
+.logo {
+  flex-shrink: 0;
+  border-radius: 4px;
+  transition: outline 0.4s, opacity 0.4s;
+
+  &:focus {
+    outline: solid 1px $accent;
+    outline-offset: 4px;
+  }
+
+  &:hover {
+    outline: solid 1px $accent;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+
+  &__img {
+    width: 147px;
+  }
+}
+
+.button {
+  display: inline-block;
+
+
+  &:focus {
+    outline: solid 1px $accent;
+    outline-offset: 4px;
+  }
+
+  &:hover {
+    background-color: $primary;
+    color: $accent;
+    outline: solid 1px $accent;
+  }
+
+  &:active {
+    background-color: $accent;
+    color: $primary;
+  }
+
+  @media (max-width: 375px) {
+    padding: 18px 24px;
+  }
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+
+
+  &:focus {
+    outline: solid 1px $accent;
+    border-radius: 4px;
+  }
+
+  &:hover {
+    color: $accent;
+
+    &::before {
+      transform: scaleX(0);
+      transform-origin: right;
+    }
+  }
+
+  &:active {
+    color: $primary;
+    opacity: 0, 5;
+
+    &:before {
+      transform: scaleX(1);
+      transform-origin: right;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import './reset';
+@import './vars';
+@import './ints';
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.3;
+  color: $primary;
+  overflow-x: hidden;
+  background-color: $bg;
+  scroll-behavior: smooth;
+}
+
+html {
+  &.lock {
+    height: 100%;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  overflow-x: hidden;
+
+  &.lock {
+    overflow-y: hidden;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+@import '../components/header';
+@import '../components/footer';
+
+
+.section {
+  padding: 60px 0 70px;
+}

@@ -17,8 +17,8 @@
   &__input {
     padding: 8px 16px 8px 42px;
     background-color: $white;
-    border: 1px solid $accent;
-    border-radius: 30px;
+    border: 1px solid $lightGrey;
+    border-radius: 12% 18% 22% 13% / 58% 44% 46% 34%;
     height: 50px;
     color: $primary;
 
@@ -61,7 +61,7 @@
     justify-content: center;
     gap: 16px;
     padding: 10px 24px;
-    border-radius: 30px;
+    border-radius: 29% 30% 25% 17% / 60% 58% 46% 34%;
     background-color: $accent;
     color: $white;
     font-family: "Amatic SC",

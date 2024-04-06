@@ -1,7 +1,12 @@
 import React from 'react';
+import { Catalog } from '../sections';
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <main>
+      <Catalog />
+    </main>
+  );
 };
 
 export default Home;

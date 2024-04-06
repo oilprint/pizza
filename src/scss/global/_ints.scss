@@ -23,8 +23,16 @@
 }
 
 .button {
-  display: inline-block;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 50% 52% 28% 61% / 39% 43% 48% 50%;
+  border: 1px solid $accent;
+  background-color: $bg;
+  color: $accent;
+  font-size: 24px;
+  font-weight: 700;
 
   &:focus {
     outline: solid 1px $accent;
@@ -32,19 +40,53 @@
   }
 
   &:hover {
-    background-color: $primary;
-    color: $accent;
-    outline: solid 1px $accent;
+    background-color: $accent;
+    color: $white;
   }
 
   &:active {
     background-color: $accent;
-    color: $primary;
+    color: $white;
+  }
+}
+
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50% 52% 28% 61% / 39% 43% 48% 50%;
+  font-size: 32px;
+  border: 1px solid transparent;
+  transition: color 0.3s ease-in,
+    outline 0.3s ease-in,
+    border-color 0.3s ease-in;
+
+  &:focus {
+    color: $accent;
   }
 
-  @media (max-width: 375px) {
-    padding: 18px 24px;
+  &:hover {
+    border-color: $accent;
+    color: $accent;
   }
+
+  &:active {
+    border-color: transparent;
+  }
+
+  &.active {
+
+    &::before {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 0;
+    }
+  }
+
 }
 
 .link {

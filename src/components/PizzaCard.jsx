@@ -1,51 +1,97 @@
-import React from 'react';
+import { useState } from 'react';
 
-const PizzaCard = () => {
+const PizzaCard = ({ id, name, description, imageUrl, types, price }) => {
+  const [typePizza, setTypePizza] = useState(0);
+  // const [sizePizza, setSizePizza] = useState(0);
+
+  const [selectedSize, setSelectedSize] = useState(Object.keys(price[1])[0]);
+  const [selectedPrice, setSelectedPrice] = useState(price[1][selectedSize]);
+
+  const handleSizeChange = (size, price) => {
+    setSelectedSize(size);
+    setSelectedPrice(price);
+  };
+
+  const [countPizza, setCountPizza] = useState(0);
+  const onClickAdd = () => {
+    setCountPizza(countPizza + 1);
+  };
+  const typeNames = ['Classic', 'Italian'];
+
   return (
-    <article className="pizzaCard">
-      <a href="" className="pizzaCard__link">
+    <article className="pizza-card">
+      <a href="#" className="pizza-card__link">
         <img
-          className="pizzaCard__img"
-          src="./catalog/bianco.jpg"
-          alt=""
+          className="pizza-card__img"
+          src={imageUrl}
+          alt={name}
           width={370}
           height={250}
           loading="lazy"
         />
       </a>
 
-      <div className="pizzaCard__content">
-        <ul className="pizzaCard__size">
-          <li className="pizzacard__size-item">
-            <button className="pizzaCard__size-btn btn">14"</button>
-          </li>
-          <li className="pizzacard__size-item">
-            <button className="pizzaCard__size-btn btn active">20"</button>
-          </li>
-          <li className="pizzacard__size-item">
-            <button className="pizzaCard__size-btn btn">28"</button>
-          </li>
-        </ul>
-        <ul className="pizzaCard__category">
-          <li className="pizzaCard__category-item">
-            <button className="pizzaCard__category-btn btn">Classic</button>
-          </li>
-          <li className="pizzaCard__category-item">
-            <button className="pizzaCard__category-btn btn active">Italian</button>
-          </li>
-        </ul>
-        <h2 className="pizzaCard__title title">Bianco</h2>
-        <p className="pizzaCard__text">
-          No Base Sauce, Cheese topped with our Homemade Creamy White Sauce. ( Contains Egg )
-        </p>
-        <div className="pizzaCard__bottom">
-          <div className="pizzaCard__price">
+      <div className="pizza-card__content">
+        <div className="pizza-card__top">
+          <ul className="pizza-card__size">
+            {price.map((priceObj) => {
+              const size = Object.keys(priceObj)[0];
+              const price = priceObj[size];
+              return (
+                <li className="pizza-card__size-item" key={size}>
+                  <button
+                    onClick={() => handleSizeChange(size, price)}
+                    className={
+                      selectedSize === size
+                        ? 'pizza-card__size-btn btn active'
+                        : 'pizza-card__size-btn btn'
+                    }>
+                    {size}"
+                  </button>
+                </li>
+              );
+            })}
+
+            {/* {price.map((item, ind) => (
+            <li className="pizza-card__size-item" key={ind}>
+              <button
+                onClick={() => setSizePizza(ind)}
+                className={
+                  sizePizza === ind ? 'pizza-card__size-btn btn active' : 'pizza-card__size-btn btn'
+                }>
+                {item.size}"
+              </button>
+            </li>
+          ))} */}
+          </ul>
+          <ul className="pizza-card__category">
+            {types.map((typeId, ind) => (
+              <li className="pizza-card__category-item" key={ind}>
+                <button
+                  onClick={() => setTypePizza(ind)}
+                  className={
+                    typePizza === ind
+                      ? `pizza-card__category-btn btn active`
+                      : `pizza-card__category-btn btn`
+                  }>
+                  {typeNames[typeId]}
+                </button>
+              </li>
+            ))}
+          </ul>
+          <h2 className="pizza-card__title title">{name}</h2>
+          <p className="pizza-card__text">{description}</p>
+        </div>
+
+        <div className="pizza-card__bottom">
+          <div className="pizza-card__price">
             <span>$</span>
-            14.55
+            {selectedPrice}
           </div>
-          <button className="pizzaCard__button button">
+          <button onClick={onClickAdd} className="pizza-card__button button">
             <div>+</div>
             Add to Cart
+            <span className="pizza-card__count">{countPizza}</span>
           </button>
         </div>
       </div>

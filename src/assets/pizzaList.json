@@ -1,0 +1,145 @@
+[
+  {
+    "id": 1,
+    "imageUrl": "./catalog/item-01.webp",
+    "name": "Cheese Pizza",
+    "description": "Classic homemade tomato sauce with highest quality whole milk mozzarella cheese",
+    "types": [0, 1],
+    "sizes": [14, 20, 28],
+    "price": [{"14": 14.99},
+              {"20": 16.99},
+              {"28": 24.99 }],
+    "category": 2,
+    "rating": 7
+  },
+  {
+    "id": 2,
+    "imageUrl": "catalog/item-02.webp",
+    "name": "Meat Lover",
+    "description": "Beef, Sausage, Pepperoni, Ham.",
+    "types": [0, 1],
+    "sizes": [20, 28],
+    "price": [{"14": 14.99},
+              {"20": 16.99},
+              {"28": 24.99 }],
+    "category": 1,
+    "rating": 4
+  },
+  {
+    "id": 3,
+    "imageUrl": "catalog/item-03.webp",
+    "name": "Bianca spinach & grilled chicken",
+    "description": "No Base Sauce, Cheese topped with our Homemade Creamy White Sauce (Contains Egg ), Spinach, Grilled Chicken.",
+    "types": [0, 1],
+    "sizes": [14, 20, 28],
+    "price": [{"14": 14.99},
+              {"20": 16.99},
+              {"28": 24.99 }],
+    "category": 1,
+    "rating": 8
+  },
+  {
+    "id": 4,
+    "imageUrl": "catalog/item-04.webp",
+    "name": "Hawaiian",
+    "description": "Classic Cheese topped with Ham & Pine Apple.",
+    "types": [0, 1],
+    "sizes": [14, 28],
+    "price": [{"14": 14.99},
+              {"20": 16.99},
+              {"28": 24.99 }],
+    "category": 2,
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "imageUrl": "catalog/item-05.webp",
+    "name": "",
+    "description": "",
+    "types": [0, 1],
+    "sizes": [14, 20, 28],
+   "price": [{"14": 14.99},
+              {"20": 16.99},
+              {"28": 24.99 }],
+    "category": 1,
+    "rating": 4
+  },
+  {
+    "id": 6,
+    "imageUrl": "catalog/item-06.webp",
+    "name": "BBQ Chicken Pizza",
+    "description": "No Base Sauce.  Cheese topped with Breaded Fried Chicken Breast tossed with BBQ sauce",
+    "types": [0, 1],
+    "sizes": [14, 20, 28],
+    "price": [{"14": 14.99},
+              {"20": 16.99},
+              {"28": 24.99 }],
+    "category": 4,
+    "rating": 5
+  },
+  {
+    "id": 7,
+    "imageUrl": "catalog/item-07.webp",
+    "name": "Supreme",
+    "description": "Beef, Sausage, Pepperoni, Mushroom, Red Onion, Green Pepper.",
+    "types": [0, 1],
+    "sizes": [14, 20, 28],
+    "price": [{"14": 14.99},
+              {"20": 16.99},
+              {"28": 24.99 }],
+    "category": 3,
+    "rating": 6
+  },
+  {
+    "id": 8,
+    "imageUrl": "catalog/item-08.webp",
+    "name": "Bianca Spinach & Grilled Chicken",
+    "description": "No Base Sauce,  Cheese topped with our Homemade Creamy White Sauce (Contains Egg ), Spinach, Grilled Chicken.",
+    "types": [0],
+    "sizes": [14, 20],
+    "price": [{"14": 14.99},
+              {"28": 24.99 }],
+    "category": 1,
+    "rating": 7
+  },
+  {
+    "id": 9,
+    "imageUrl": "catalog/item-09.webp",
+    "name": "Veggie Pizza",
+    "description": "Mushroom, Red Onion, Green Pepper, Black Olives",
+    "types": [0, 1],
+    "sizes": [14, 20, 28],
+   "price": [{"14": 14.99},
+              {"20": 16.99}],
+    "category": 2,
+    "rating": 7
+  }
+  ,
+  {
+    "id": 10,
+    "imageUrl": "catalog/item-10.webp",
+    "name": "Bianca",
+    "description": "No Base Sauce,  Cheese topped with our Homemade Creamy White Sauce",
+    "types": [0, 1],
+    "sizes": [14, 20, 28],
+    "price": [
+              {"20": 16.99},
+              {"28": 24.99 }],
+    "category": 2,
+    "rating": 7
+  }
+  ,
+  {
+    "id": 11,
+    "imageUrl": "catalog/item-11.webp",
+    "name": "Lasagna Pizza",
+    "description": "No Base Sauce.  Cheese topped with Sliced home made Meatball, baked with home made White Sauce on the top with  our home made Marinara Sauce Toppings.  Topped with Fresh Parsley",
+    "types": [0, 1],
+    "sizes": [14, 20, 28],
+    "price": [{"14": 14.99},
+              {"20": 16.99},
+              {"28": 24.99 }],
+    "category": 1,
+    "rating": 6
+  }
+]

@@ -1,6 +1,13 @@
 .catalog {
   margin: 0 auto;
 
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px 30px;
+  }
+
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -14,5 +21,6 @@
 
   &__item {
     width: calc((100% - 2*30px)/3);
+    // width: 100%;
   }
 }

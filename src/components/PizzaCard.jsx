@@ -51,18 +51,6 @@ const PizzaCard = ({ id, name, description, imageUrl, types, price }) => {
                 </li>
               );
             })}
-
-            {/* {price.map((item, ind) => (
-            <li className="pizza-card__size-item" key={ind}>
-              <button
-                onClick={() => setSizePizza(ind)}
-                className={
-                  sizePizza === ind ? 'pizza-card__size-btn btn active' : 'pizza-card__size-btn btn'
-                }>
-                {item.size}"
-              </button>
-            </li>
-          ))} */}
           </ul>
           <ul className="pizza-card__category">
             {types.map((typeId, ind) => (

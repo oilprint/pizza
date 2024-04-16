@@ -1,10 +1,9 @@
-import React from 'react';
 import { Catalog } from '../sections';
 
-const Home = () => {
+const Home = ({ searchValue, setSearchValue }) => {
   return (
     <main>
-      <Catalog />
+      <Catalog searchValue={searchValue} setSearchValue={setSearchValue} />
     </main>
   );
 };

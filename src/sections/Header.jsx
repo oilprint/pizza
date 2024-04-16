@@ -2,13 +2,19 @@ import { Link } from 'react-router-dom';
 import { Logo } from '../assets/images';
 import { CartIcon, SearchIcon } from '../assets/icons';
 
-const Header = () => {
+const Header = ({ searchValue, setSearchValue }) => {
   return (
     <header>
       <div className="container">
         <div className="header__inner">
           <div className="header__search">
-            <input className="header__input" type="text" placeholder="Search..." />
+            <input
+              className="header__input"
+              type="text"
+              placeholder="Search..."
+              value={searchValue}
+              onChange={(event) => setSearchValue(event.target.value)}
+            />
             <SearchIcon className="header__input-icon" />
           </div>
           <Link to="/">

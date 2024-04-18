@@ -1,14 +1,25 @@
+import { useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { Link } from 'react-router-dom';
 import { Logo } from '../assets/images';
 import { CartIcon, SearchIcon } from '../assets/icons';
 
-const Header = ({ searchValue, setSearchValue }) => {
+const Header = () => {
+  const dispatch = useDispatch();
+  const { searchValue } = useSelector((state) => state.filter.searchValue);
+
+  const inputRef = useRef();
+  const setSearchValue = (e) => {
+    dispatch(setSearchValue(e));
+  };
   return (
     <header>
       <div className="container">
         <div className="header__inner">
           <div className="header__search">
             <input
+              ref={inputRef}
               className="header__input"
               type="text"
               placeholder="Search..."

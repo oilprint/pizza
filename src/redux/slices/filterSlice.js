@@ -6,6 +6,7 @@ const initialState = {
   sortType: {
   value: "Popularity",
   sortProperty: "rating"},
+  searchValue: ''
 }
 
 export const filterSlice = createSlice({
@@ -18,9 +19,12 @@ export const filterSlice = createSlice({
     setSortType(state, action) {
       state.sortType = action.payload;   
     },
+    setSearchValue(state, action) {
+      state.searchValue = action.payload;   
+    },
   }
 })
 
-export const { setCatgoryId, setSortType } = filterSlice.actions
+export const { setCatgoryId, setSortType, searchValue } = filterSlice.actions
 
 export default filterSlice.reducer

@@ -1,19 +1,19 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setSortId } from '../redux/slices/filterSlice';
+import { setSortType } from '../redux/slices/filterSlice';
 import { ChevronIcon } from '../assets/icons';
 import { sortList } from '../constants';
 
 const Sort = () => {
   const [open, setOpen] = useState(false);
-  const sortId = useSelector((state) => state.filter.sortId);
+  const sort = useSelector((state) => state.filter.sortType);
   const dispatch = useDispatch();
   // const [selectedSort, setSelectedSort] = useState(0);
-  const sortName = sortList[sortId].value;
+  console.log(sort);
 
-  const onClickSelectedItem = (id) => {
-    dispatch(setSortId(id));
+  const onClickSelectedItem = (item) => {
+    dispatch(setSortType(item));
     setOpen(false);
   };
 
@@ -22,15 +22,17 @@ const Sort = () => {
       <div onClick={() => setOpen(!open)} className="sort__label">
         <ChevronIcon className={open ? 'sort__icon down' : 'sort__icon'} />
         Sort by
-        <span className="sort__selected">{sortName}</span>
+        <span className="sort__selected">{sort.value}</span>
       </div>
       {open && (
         <ul className="sort__list">
           {sortList.map((item, i) => (
             <li
-              onClick={() => onClickSelectedItem(i)}
-              className={sortId === i ? 'sort__item active' : 'sort__item'}
-              key={item.id}>
+              onClick={() => onClickSelectedItem(item)}
+              className={
+                sort.sortProperty === item.sortProperty ? 'sort__item active' : 'sort__item'
+              }
+              key={i}>
               {item.value}
             </li>
           ))}

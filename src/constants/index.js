@@ -19,10 +19,13 @@ export const categoriesList = [
 ];
 
 export const sortList = [
-  {id: uuidv4(),
-  value: "Popularity"},
-  {id: uuidv4(),
-  value: "Price: Low to High"},
-  {id: uuidv4(),
-  value: "Price: High to Low"},
+  {
+  value: "Popularity",
+  sortProperty: "rating"},
+  {
+  value: "Price: Low to High",
+  sortProperty: "minPrice"},
+  {
+  value: "Price: High to Low",
+  sortProperty: "-minPrice"},
 ];

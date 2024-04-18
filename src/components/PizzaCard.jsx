@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 const PizzaCard = ({ id, name, description, imageUrl, types, price }) => {
   const [typePizza, setTypePizza] = useState(0);
-  // const [sizePizza, setSizePizza] = useState(0);
 
   const [selectedSize, setSelectedSize] = useState(Object.keys(price[1])[0]);
   const [selectedPrice, setSelectedPrice] = useState(price[1][selectedSize]);
@@ -74,7 +73,7 @@ const PizzaCard = ({ id, name, description, imageUrl, types, price }) => {
         <div className="pizza-card__bottom">
           <div className="pizza-card__price">
             <span>$</span>
-            {selectedPrice}
+            {selectedPrice.toFixed(2)}
           </div>
           <button onClick={onClickAdd} className="pizza-card__button button">
             <div>+</div>

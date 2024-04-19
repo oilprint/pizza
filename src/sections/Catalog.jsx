@@ -9,12 +9,13 @@ import { Categories, Sort, PizzaCard, Skeleton } from '../components';
 const Catalog = () => {
   const [items, setItems] = useState([]);
   const dispatch = useDispatch();
-  const { categoryId, sortType } = useSelector((state) => state.filter);
+  const { categoryId, sortType, searchValue } = useSelector((state) => state.filter);
 
   const [isLoading, setIsLoading] = useState(true);
   const category = categoryId ? `&category=${categoryId}` : '';
   const sort = sortType.sortProperty.replace('-', '');
   const order = sortType.sortProperty.includes('-') ? 'desc' : 'asc';
+  const search = searchValue ? `&search=${searchValue}` : '';
 
   const onChangeCategory = (id) => {
     dispatch(setCatgoryId(id));
@@ -24,15 +25,20 @@ const Catalog = () => {
     setIsLoading(true);
     axios
       .get(
-        `https://661b801e65444945d04f9c13.mockapi.io/items?sortBy=${sort}&order=${order}${category} `,
+        `https://661b801e65444945d04f9c13.mockapi.io/items?sortBy=${sort}&order=${order}${category}${search} `,
       )
       .then((res) => {
         setItems(res.data);
         setIsLoading(false);
         window.scrollTo(0, 0);
+      })
+      .catch((err) => {
+        setItems([]);
+        setIsLoading(false);
+        console.log(err);
       });
-  }, [categoryId, sortType]);
-
+  }, [categoryId, sortType, searchValue]);
+  console.log(items);
   return (
     <section className="section catalog">
       <div className="container">
@@ -41,6 +47,7 @@ const Catalog = () => {
           <Sort />
         </div>
         <h2 className="title catalog__title">All Pizzas</h2>
+        {!items.length && <p className="catalog__text">No results were found for your request</p>}
         <ul className="catalog__list">
           {isLoading
             ? [...new Array(12)].map((item, i) => <Skeleton key={i} />)

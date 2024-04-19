@@ -8,52 +8,6 @@
     padding: 20px 0;
   }
 
-  &__search {
-    position: relative;
-    max-width: 230px;
-    width: 100%;
-  }
-
-  &__input {
-    padding: 8px 16px 8px 42px;
-    background-color: $white;
-    border: 1px solid $lightGrey;
-    border-radius: 12% 18% 22% 13% / 58% 44% 46% 34%;
-    height: 50px;
-    color: $primary;
-
-
-    &::placeholder {
-      font-family: "Amatic SC",
-        sans-serif;
-      font-size: 28px;
-      font-weight: 700;
-      line-height: 1;
-      color: $grey;
-      transform: translateY(3px);
-      transition: opacity 0.5s easy;
-    }
-
-    &:focus {
-      outline: solid 1px $accent;
-      outline-offset: 4px;
-
-      &.header__input::placeholder {
-        opacity: 0;
-      }
-    }
-
-    &:hover {
-      border-color: $secondary;
-    }
-  }
-
-  &__input-icon {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-  }
-
   &__button {
     position: relative;
     display: flex;

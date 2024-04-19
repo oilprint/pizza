@@ -9,8 +9,6 @@ const Sort = () => {
   const [open, setOpen] = useState(false);
   const sort = useSelector((state) => state.filter.sortType);
   const dispatch = useDispatch();
-  // const [selectedSort, setSelectedSort] = useState(0);
-  console.log(sort);
 
   const onClickSelectedItem = (item) => {
     dispatch(setSortType(item));

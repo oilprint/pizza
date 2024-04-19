@@ -23,4 +23,9 @@
     width: calc((100% - 2*30px)/3);
     // width: 100%;
   }
+
+  &__text {
+    font-size: 24px;
+    text-align: center;
+  }
 }

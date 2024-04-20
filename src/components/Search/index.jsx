@@ -1,5 +1,5 @@
 import { useRef, useState, useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setSearchValue } from '../../redux/slices/filterSlice';
 
 import { SearchIcon, ClearIcon } from '../../assets/icons';
@@ -10,7 +10,6 @@ const Search = () => {
   const [value, setValue] = useState('');
   const inputRef = useRef();
   const dispatch = useDispatch();
-  const { searchValue } = useSelector((state) => state.filter);
 
   const updateSearchValue = useCallback(
     debounce((str) => {

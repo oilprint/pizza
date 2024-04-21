@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { setSortType } from '../redux/slices/filterSlice';
@@ -9,14 +9,25 @@ const Sort = () => {
   const [open, setOpen] = useState(false);
   const sort = useSelector((state) => state.filter.sortType);
   const dispatch = useDispatch();
+  const sortRef = useRef();
 
   const onClickSelectedItem = (item) => {
     dispatch(setSortType(item));
     setOpen(false);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (!sortRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
   return (
-    <div className="sort">
+    <div ref={sortRef} className="sort">
       <div onClick={() => setOpen(!open)} className="sort__label">
         <ChevronIcon className={open ? 'sort__icon down' : 'sort__icon'} />
         Sort by

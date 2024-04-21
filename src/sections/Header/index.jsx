@@ -20,10 +20,10 @@ const Header = () => {
           <button className={styles.header__button}>
             <span>
               <span>$</span>
-              {totalPrice}
+              {totalPrice.toFixed(2)}
             </span>
             <CartIcon width={32} height={32} />
-            {items.length ? <span className={styles.header__number}>{items.length}</span> : ''}
+            {items.length > 0 && <span className={styles.header__number}>{items.length}</span>}
           </button>
         </div>
       </div>

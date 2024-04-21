@@ -6,11 +6,14 @@ import styles from './PizzaCard.module.scss';
 
 const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
   const [typePizza, setTypePizza] = useState(0);
-  const [countPizza, setCountPizza] = useState(0);
+
   const [selectedSize, setSelectedSize] = useState(Object.keys(price[1])[0]);
   const [selectedPrice, setSelectedPrice] = useState(price[1][selectedSize]);
-  const { items } = useSelector((state) => state.cart);
+
+  const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id));
   const dispatch = useDispatch();
+
+  const addedCount = cartItem ? cartItem.count : 0;
 
   const handleSizeChange = (size, price) => {
     setSelectedSize(size);
@@ -20,13 +23,14 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
   const onClickAdd = () => {
     const item = {
       id,
-      title,
+      title: title,
       imageUrl,
       price: selectedPrice,
       type: typePizza,
     };
     dispatch(addItem(item));
   };
+
   const typeNames = ['Classic', 'Italian'];
 
   return (
@@ -92,7 +96,7 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
           <button onClick={onClickAdd} className={`${styles.pizzaCard__button} ${styles.button}`}>
             <div>+</div>
             Add to Cart
-            <span className={styles.pizzaCard__count}>{countPizza}</span>
+            {addedCount > 0 && <span className={styles.pizzaCard__count}>{addedCount}</span>}
           </button>
         </div>
       </div>

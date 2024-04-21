@@ -95,7 +95,7 @@ const Catalog = () => {
           <Sort />
         </div>
         <h2 className="title catalog__title">All Pizzas</h2>
-        {!items.length && <p className="catalog__text">No results were found for your request</p>}
+
         <ul className="catalog__list">
           {isLoading
             ? [...new Array(12)].map((item, i) => <Skeleton key={i} />)
@@ -104,6 +104,7 @@ const Catalog = () => {
                   <PizzaCard {...item} />
                 </li>
               ))}
+          {!items.length && <p className="catalog__text">No results were found for your request</p>}
         </ul>
       </div>
     </section>

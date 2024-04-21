@@ -1,21 +1,31 @@
 import { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addItem } from '../../redux/slices/cartSlice';
+
 import styles from './PizzaCard.module.scss';
 
-const PizzaCard = ({ id, name, description, imageUrl, types, price }) => {
+const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
   const [typePizza, setTypePizza] = useState(0);
-
+  const [countPizza, setCountPizza] = useState(0);
   const [selectedSize, setSelectedSize] = useState(Object.keys(price[1])[0]);
   const [selectedPrice, setSelectedPrice] = useState(price[1][selectedSize]);
+  const { items } = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
 
   const handleSizeChange = (size, price) => {
     setSelectedSize(size);
     setSelectedPrice(price);
   };
-  console.log(name);
 
-  const [countPizza, setCountPizza] = useState(0);
   const onClickAdd = () => {
-    setCountPizza(countPizza + 1);
+    const item = {
+      id,
+      title,
+      imageUrl,
+      price: selectedPrice,
+      type: typePizza,
+    };
+    dispatch(addItem(item));
   };
   const typeNames = ['Classic', 'Italian'];
 
@@ -25,7 +35,7 @@ const PizzaCard = ({ id, name, description, imageUrl, types, price }) => {
         <img
           className={styles.pizzaCard__img}
           src={imageUrl}
-          alt={name}
+          alt={title}
           width={370}
           height={250}
           loading="lazy"
@@ -70,7 +80,7 @@ const PizzaCard = ({ id, name, description, imageUrl, types, price }) => {
               );
             })}
           </ul>
-          <h2 className={styles.pizzaCard__title}>{name}</h2>
+          <h2 className={styles.pizzaCard__title}>{title}</h2>
           <p className={styles.pizzaCard__text}>{description}</p>
         </div>
 

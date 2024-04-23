@@ -1,22 +1,35 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 import { Logo } from '../../assets/images';
-import { CartIcon } from '../../assets/icons';
+import { CartIcon, OpenMenuBtn, CloseMenuBtn } from '../../assets/icons';
 import { Search } from '../../components';
 
 import styles from './Header.module.scss';
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const { items, totalPrice } = useSelector((state) => state.cart);
   return (
     <header>
       <div className={styles.container}>
         <div className={styles.header__inner}>
           <Search />
-          <Link to="/">
-            <img src={Logo} alt="Logo Pizzeria" className={styles.logo} width={140} height={110} />
+          <Link to="/" className={styles.logo}>
+            <img
+              src={Logo}
+              alt="Logo Pizzeria"
+              className={styles.logo__img}
+              width={140}
+              height={110}
+            />
           </Link>
+
+          {/* <button onClick={() => setIsOpen((prev) => !prev)} className={styles.mobileBtn}>
+            {isOpen ? <CloseMenuBtn /> : <OpenMenuBtn />}
+          </button> */}
+
           <button className={styles.header__button}>
             <span>
               <span>$</span>

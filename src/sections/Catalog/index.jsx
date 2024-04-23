@@ -24,7 +24,9 @@ const Catalog = () => {
     dispatch(setCatgoryId(id));
   };
 
-  const skeleton = [...new Array(12)].map((item, i) => <Skeleton key={i} />);
+  const skeleton = [...new Array(12)].map((item, i) => (
+    <Skeleton className={styles.catalog__item} key={i} />
+  ));
   const pizzas = items.map((item, ind) => (
     <li className={styles.catalog__item} key={ind}>
       <PizzaCard {...item} />

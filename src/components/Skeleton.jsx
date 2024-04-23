@@ -2,6 +2,7 @@ import ContentLoader from 'react-content-loader';
 
 const Skeleton = (props) => (
   <ContentLoader
+    className={props.className}
     speed={2}
     width={370}
     height={520}

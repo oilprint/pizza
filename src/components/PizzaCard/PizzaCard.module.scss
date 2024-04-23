@@ -8,6 +8,7 @@
   line-height: 1;
   font-weight: 700;
   height: 100%;
+  max-width: 370px;
 
   &__link {
     display: block;
@@ -48,6 +49,11 @@
     justify-content: center;
     gap: 52px;
     margin-bottom: 4px;
+
+    @media(max-widht: 768px) {
+      justify-content: space-between;
+      gap: 10px;
+    }
   }
 
   &__sizeBtn {

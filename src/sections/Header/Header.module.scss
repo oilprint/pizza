@@ -1,6 +1,8 @@
 @import '../../scss/global/global';
 
 .header {
+  position: relative;
+
   &__inner {
     display: flex;
     align-items: center;
@@ -53,4 +55,17 @@
     font-weight: 700;
   }
 
+}
+
+.mobileBtn {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  color: $primary;
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
 }

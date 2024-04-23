@@ -52,6 +52,10 @@ html {
 
 .section {
   padding: 60px 0 70px;
+
+  @media (max-width: 1200px) {
+    padding: calc(15px + 3vw) 0;
+  }
 }
 
 .title {
@@ -62,4 +66,8 @@ html {
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+
+  @media(max-width: 1200px) {
+    font-size: clamp(70px, 10vw, 80px);
+  }
 }

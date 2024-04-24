@@ -14,7 +14,7 @@ const index = () => {
           </ul>
           <div className={styles.cartList__total}>
             <div className={styles.cartList__totalCount}>
-              Count:<span> 5</span>
+              Count:<span>5</span>
             </div>
             <div className={styles.cartList__totalPrice}>
               Total: <span> $ 52</span>

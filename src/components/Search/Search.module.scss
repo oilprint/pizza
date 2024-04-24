@@ -2,19 +2,32 @@
 
 .search {
   position: relative;
-  max-width: 230px;
-  width: 100%;
-  top: 0;
 
-
+  @media(max-width: 576px) {
+    display: none;
+    position: absolute;
+    top: 126px;
+    right: 50%;
+    transform: translateX(50%);
+  }
 
   &__input {
-    padding: 8px 16px 8px 42px;
+    max-width: 230px;
+    width: 100%;
+    padding: 12px 16px 12px 42px;
     background-color: $white;
     border: 1px solid $lightGrey;
     border-radius: 12% 18% 22% 13% / 58% 44% 46% 34%;
-    height: 50px;
     color: $primary;
+    width: 230px;
+    min-width: 70px;
+    max-width: 230px;
+
+    @media(max-width: 768px) {
+      width: 100px;
+    }
+
+
 
 
     &::placeholder {
@@ -26,11 +39,18 @@
       color: $grey;
       transform: translateY(3px);
       transition: opacity 0.5s easy;
+
+      @media(max-width: 768px) {
+        opacity: 0;
+      }
     }
 
     &:focus {
       outline: solid 1px $accent;
       outline-offset: 4px;
+      width: 230px;
+      min-width: 230px;
+      transition: all 1s ease;
 
       &.header__input::placeholder {
         opacity: 0;
@@ -40,7 +60,6 @@
     &:hover {
       border-color: $secondary;
     }
-
   }
 
   &__icon {
@@ -55,6 +74,21 @@
     justify-content: center;
     align-items: center;
     top: 12px;
-    right: -10px;
+    right: 8px;
+    border-radius: 50%;
+
+    &:hover {
+      outline: solid 1px $accent;
+      outline-offset: 4px;
+    }
+
+    &:focus {
+      outline: solid 1px $accent;
+      outline-offset: 4px;
+    }
+
+    &:active {
+      background-color: $lightGrey;
+    }
   }
 }

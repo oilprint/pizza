@@ -1,7 +1,6 @@
 @import '../../scss/global/global';
 
 .header {
-  position: relative;
 
   &__inner {
     display: flex;
@@ -9,6 +8,23 @@
     justify-content: space-between;
     padding: 20px 0;
   }
+
+  &__cart {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 230px;
+    width: 100%;
+
+    @media(max-width: 768px) {
+      max-width: 140px;
+    }
+
+    @media(max-width: 576px) {
+      max-width: 75px;
+    }
+  }
+
+
 
   &__button {
     position: relative;
@@ -54,18 +70,19 @@
     font-size: 15px;
     font-weight: 700;
   }
-
 }
 
 .mobileBtn {
   display: none;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
-  color: $primary;
+  padding: 0 20px;
+  background-color: $white;
+  border: 1px solid $lightGrey;
+  border-radius: 12% 18% 22% 13% / 58% 44% 46% 34%;
+  height: 50px;
 
-  @media (max-width: 768px) {
+  @media(max-width: 576px) {
     display: flex;
   }
 }

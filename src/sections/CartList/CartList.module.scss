@@ -1,0 +1,45 @@
+@import '../../scss/global/global';
+
+.cartList {
+  &__inner {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media(max-width: 768px) {
+      max-width: 500px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+
+  }
+
+  &__total {
+    display: flex;
+    justify-content: flex-end;
+    gap: 50px;
+    font-family: "Amatic SC",
+      sans-serif;
+    line-height: 1;
+    font-weight: 700;
+    font-size: 48px;
+  }
+
+  &__totalPrice {
+    color: $secondary;
+  }
+
+
+
+
+
+
+}

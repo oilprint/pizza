@@ -4,6 +4,9 @@ import ClearIcon from "./ClearIcon";
 import ChevronIcon from "./ChevronIcon";
 import CloseMenuBtn from "./CloseMenuBtn";
 import OpenMenuBtn from "./OpenMenuBtn";
+import PlusBtn from "./PlusBtn";
+import MinusBtn from "./MinusBtn";
+import DeleteBtn from "./DeleteBtn";
 
 export {
   CartIcon,
@@ -11,5 +14,8 @@ export {
   ChevronIcon,
   ClearIcon,
   CloseMenuBtn,
-  OpenMenuBtn
+  OpenMenuBtn,
+  PlusBtn,
+  MinusBtn,
+  DeleteBtn
 }

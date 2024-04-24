@@ -8,6 +8,7 @@ import debounce from 'lodash.debounce';
 
 const Search = () => {
   const [value, setValue] = useState('');
+
   const inputRef = useRef();
   const dispatch = useDispatch();
 

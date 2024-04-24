@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
@@ -6,7 +5,7 @@ import { store } from './redux/store';
 import { Provider } from 'react-redux';
 
 import './scss/index.scss';
-import { Home, ErrorPage, SingleItem } from './pages';
+import { Home, Cart, ErrorPage, SingleItem } from './pages';
 import Layout from './Layout';
 
 const router = createBrowserRouter([
@@ -18,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />,
+      },
+      {
+        path: '/cart',
+        element: <Cart />,
       },
       {
         path: '/:id',

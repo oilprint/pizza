@@ -1,9 +1,11 @@
 import { Catalog } from '../sections';
 
-const Home = ({ searchValue, setSearchValue }) => {
+const Home = () => {
   return (
     <main>
-      <Catalog searchValue={searchValue} setSearchValue={setSearchValue} />
+      <div className="wrapper">
+        <Catalog />
+      </div>
     </main>
   );
 };

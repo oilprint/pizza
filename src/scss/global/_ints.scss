@@ -120,3 +120,31 @@
     }
   }
 }
+
+.btnSmall {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 36px;
+  height: 36px;
+  background-color: $white;
+  border: 1px solid $secondary;
+  border-radius: 50%;
+  color: rgba($primary, 0.4);
+  transition: border-color 0.3s ease-in, color 0.3s ease-in;
+
+  &:hover {
+    border-color: $accent;
+    color: rgba($primary, 1);
+  }
+
+  &:focus {
+    outline: solid 1px $accent;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    background-color: $lightGrey;
+  }
+}

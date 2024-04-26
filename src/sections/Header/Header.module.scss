@@ -24,8 +24,6 @@
     }
   }
 
-
-
   &__button {
     position: relative;
     display: flex;
@@ -62,6 +60,8 @@
     position: absolute;
     bottom: 3px;
     right: 12px;
+    font-family: "Lato",
+      sans-serif;
     padding: 5px 7px;
     background-color: $white;
     border: 1px solid $accent;

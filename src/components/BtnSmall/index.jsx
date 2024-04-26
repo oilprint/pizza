@@ -1,7 +1,11 @@
 import styles from './BtnSmall.module.scss';
 
-const index = ({ icon }) => {
-  return <button className={styles.btnSmall}>{icon}</button>;
+const index = ({ icon, onClick }) => {
+  return (
+    <button onClick={onClick} className={styles.btnSmall}>
+      {icon}
+    </button>
+  );
 };
 
 export default index;

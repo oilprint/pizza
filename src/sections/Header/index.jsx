@@ -9,7 +9,7 @@ import { Search } from '../../components';
 import styles from './Header.module.scss';
 
 const Header = () => {
-  const { items, totalPrice } = useSelector((state) => state.cart);
+  const { items, totalPrice, totalCount } = useSelector((state) => state.cart);
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -38,7 +38,7 @@ const Header = () => {
                 {totalPrice.toFixed(2)}
               </span>
               <CartIcon width={32} height={32} />
-              {items.length > 0 && <span className={styles.header__number}>{items.length}</span>}
+              {items.length > 0 && <span className={styles.header__number}>{totalCount}</span>}
             </Link>
           </div>
         </div>

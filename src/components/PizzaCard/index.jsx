@@ -6,12 +6,24 @@ import styles from './PizzaCard.module.scss';
 
 const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
   const [typePizza, setTypePizza] = useState(0);
+  const dispatch = useDispatch();
 
   const [selectedSize, setSelectedSize] = useState(Object.keys(price[1])[0]);
   const [selectedPrice, setSelectedPrice] = useState(price[1][selectedSize]);
 
-  const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id));
-  const dispatch = useDispatch();
+  const typeNames = ['Classic', 'Italian'];
+
+  const itemsCart = useSelector((state) => state.cart.items);
+
+  const cartItem = itemsCart.find(
+    (obj) => obj.id === id && obj.type === typeNames[typePizza] && obj.size === selectedSize,
+  );
+
+  // const cartItem = useSelector((state) =>
+  //   state.cart.items.find(
+  //     (obj) => obj.id === id && obj.type === typePizza && obj.size === selectedSize
+  //   ),
+  // );
 
   const addedCount = cartItem ? cartItem.count : 0;
 
@@ -26,12 +38,12 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
       title: title,
       imageUrl,
       price: selectedPrice,
-      type: typePizza,
+      type: typeNames[typePizza],
+      size: selectedSize,
     };
     dispatch(addItem(item));
+    console.log(cartItem);
   };
-
-  const typeNames = ['Classic', 'Italian'];
 
   return (
     <article className={styles.pizzaCard}>
@@ -61,7 +73,7 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
                         ? `${styles.pizzaCard__sizeBtn} ${styles.btn} ${styles.active}`
                         : `${styles.pizzaCard__sizeBtn} ${styles.btn}`
                     }>
-                    {size}"
+                    {size}&quot;
                   </button>
                 </li>
               );
@@ -93,7 +105,7 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
             <span>$</span>
             {selectedPrice.toFixed(2)}
           </div>
-          <button onClick={onClickAdd} className={`${styles.pizzaCard__button} ${styles.button}`}>
+          <button onClick={onClickAdd} className={styles.button}>
             <div>+</div>
             Add to Cart
             {addedCount > 0 && <span className={styles.pizzaCard__count}>{addedCount}</span>}

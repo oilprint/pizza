@@ -1,12 +1,15 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-import { CartPizza } from '../../components';
+import { CartPizza, CartEmpty } from '../../components';
 
 import styles from './CartList.module.scss';
 
 const CartList = () => {
-  const dispatch = useDispatch();
   const { items, totalPrice, totalCount } = useSelector((state) => state.cart);
+
+  if (!totalPrice) {
+    return <CartEmpty />;
+  }
 
   return (
     <section className={styles.section}>

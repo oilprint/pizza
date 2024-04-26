@@ -1,4 +1,5 @@
 import PizzaCard from "./PizzaCard";
+import CartEmpty from "./CartEmpty";
 import CartPizza from "./CartPizza";
 import Sort from "./Sort";
 import Categories from "./Categories";
@@ -15,5 +16,6 @@ export {
   Search,
   CartPizza,
   BtnSmall,
-  BtnLight
+  BtnLight,
+  CartEmpty
 }

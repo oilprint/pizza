@@ -72,8 +72,8 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price, bigImageUrl
                     onClick={() => handleSizeChange(size, price)}
                     className={
                       selectedSize === size
-                        ? `${styles.pizzaCard__sizeBtn} ${styles.btn} ${styles.active}`
-                        : `${styles.pizzaCard__sizeBtn} ${styles.btn}`
+                        ? `${styles.sizeBtn} ${styles.btn} ${styles.active}`
+                        : `${styles.sizeBtn} ${styles.btn}`
                     }>
                     {size}&quot;
                   </button>
@@ -89,8 +89,8 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price, bigImageUrl
                     onClick={() => setTypePizza(ind)}
                     className={
                       typePizza === ind
-                        ? `${styles.pizzaCard__categoryBtn} ${styles.btn} ${styles.active}`
-                        : `${styles.pizzaCard__categoryBtn} ${styles.btn}`
+                        ? `${styles.categoryBtn} ${styles.btn} ${styles.active}`
+                        : `${styles.categoryBtn} ${styles.btn}`
                     }>
                     {typeNames[typeId]}
                   </button>

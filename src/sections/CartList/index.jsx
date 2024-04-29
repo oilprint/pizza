@@ -17,8 +17,8 @@ const CartList = () => {
         <div className={styles.cartList__inner}>
           <h1 className={`${styles.title} ${styles.cartList__title}`}>Your Pizzas</h1>
           <ul className={styles.cartList__list}>
-            {items.map((item) => (
-              <li className={styles.cartList__item} key={item.id}>
+            {items.map((item, ind) => (
+              <li className={styles.cartList__item} key={item.ind}>
                 <CartPizza {...item} />
               </li>
             ))}

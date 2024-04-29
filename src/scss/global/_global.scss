@@ -70,3 +70,34 @@ html {
     font-size: clamp(70px, 10vw, 80px);
   }
 }
+
+.sizeBtn {
+  padding: 0 10px;
+
+  &.active {
+    color: $secondary;
+
+    &::before {
+      top: -12px;
+      content: url('../decor-size.svg');
+      width: 69px;
+      height: 53px;
+    }
+  }
+}
+
+.categoryBtn {
+  padding: 10px 20px;
+
+  &.active {
+    color: $secondary;
+
+    &::before {
+      top: 0;
+
+      content: url('../decor-category.svg');
+      width: 115px;
+      height: 48px;
+    }
+  }
+}

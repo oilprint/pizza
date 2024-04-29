@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useEffect, useRef } from 'react';
 
 import { Logo } from '../../assets/images';
 import { CartIcon, SearchIcon } from '../../assets/icons';
@@ -9,7 +10,19 @@ import { Search } from '../../components';
 import styles from './Header.module.scss';
 
 const Header = () => {
+  const location = useLocation();
+  const isMounted = useRef(false);
   const { items, totalPrice, totalCount } = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    if (isMounted.current) {
+      const json = JSON.stringify(items);
+      localStorage.setItem('cart', json);
+    }
+
+    isMounted.current = true;
+  }, [items]);
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -17,7 +30,7 @@ const Header = () => {
           {/* <button className={styles.mobileBtn}>
             <SearchIcon className={styles.mobileBtn__icon} />
           </button> */}
-          <Search />
+          {location.pathname !== '/cart' && <Search />}
           <Link to="/" className={styles.logo}>
             <img
               src={Logo}

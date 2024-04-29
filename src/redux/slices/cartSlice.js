@@ -1,10 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
+import {getCartFromLS} from '../../utils/getCartFromLS.js';
+import {calcTotalPrice} from '../../utils/calcTotalPrice.js';
+import {calcTotalCount} from '../../utils/calcTotalCount.js';
 
+
+const { items, totalPrice, totalCount } = getCartFromLS();
 
 const initialState = {
-  totalPrice: 0,
-  items: [],
-  totalCount: 0
+  totalPrice:  totalPrice,
+  items:  items,
+  totalCount: totalCount,
 }
 
 export const cartSlice = createSlice({
@@ -21,11 +26,15 @@ export const cartSlice = createSlice({
           ...payload, count: 1
         });
 
-      state.totalPrice = state.items.reduce((sum, obj) => { return obj.price * obj.count + sum;}, 0);
+        state.totalPrice = calcTotalPrice(state.items) 
 
-      state.totalCount = state.items.reduce((sum, obj) => {
-        return obj.count + sum
-      }, 0)
+        state.totalCount = calcTotalCount(state.items)
+
+      // state.totalPrice = state.items.reduce((sum, obj) => { return obj.price * obj.count + sum;}, 0);
+
+      // state.totalCount = state.items.reduce((sum, obj) => {
+      //   return obj.count + sum
+      // }, 0)
     },        
     minusItem(state, {payload}) {
         const findItem = state.items.find(obj => {

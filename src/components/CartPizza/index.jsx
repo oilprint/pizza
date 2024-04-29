@@ -13,9 +13,7 @@ const CartPizza = ({ id, title, type, size, imageUrl, count, price }) => {
   };
 
   const onClickMinus = () => {
-    if (`${count}` > 0) {
-      dispatch(minusItem({ id, size, type }));
-    }
+    dispatch(minusItem({ id, size, type }));
   };
 
   const onClickRemove = () => {
@@ -43,7 +41,7 @@ const CartPizza = ({ id, title, type, size, imageUrl, count, price }) => {
       </div>
       <div className={styles.cartPizza__countContent}>
         <div className={styles.cartPizza__count}>
-          <BtnSmall icon={<MinusBtn />} onClick={onClickMinus} />
+          <BtnSmall icon={<MinusBtn />} onClick={onClickMinus} disabled={count === 1} />
           <span className={styles.cartPizza__number}>{count}</span>
           <BtnSmall onClick={onClickPlus} icon={<PlusBtn />} />
         </div>

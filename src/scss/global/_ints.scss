@@ -147,4 +147,24 @@
   &:active {
     background-color: $lightGrey;
   }
+
+  &:disabled {
+    color: $grey;
+    border-color: $lightGrey;
+
+    &:hover {
+      color: $grey;
+      border-color: $lightGrey;
+    }
+  }
 }
+
+// .disabled {
+//   color: $grey;
+//   border-color: $lightGrey;
+
+//   &:hover {
+//     color: $grey;
+//     border-color: $lightGrey;
+//   }
+// }

@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, useParams } from 'react-router-dom';
 
 import { store } from './redux/store';
 import { Provider } from 'react-redux';
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
       {
-        path: '/:id',
+        path: '/pizza/:id',
         element: <SingleItem />,
       },
     ],

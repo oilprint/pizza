@@ -99,6 +99,7 @@
     color: $accent;
     margin-bottom: 4px;
     text-align: center;
+    transition: color 0.3s easy;
   }
 
   &__text {
@@ -128,5 +129,22 @@
     border-radius: 50%;
     color: $white;
     background-color: $accent;
+  }
+
+  &__link {
+
+    &:focus {
+      .pizzaCard__title {
+        outline: solid 1px $accent;
+        outline-offset: 4px;
+      }
+    }
+
+    &:hover {
+      .pizzaCard__title {
+        color: $secondary;
+      }
+    }
+
   }
 }

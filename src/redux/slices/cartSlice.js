@@ -35,6 +35,9 @@ export const cartSlice = createSlice({
         });
         findItem && findItem.count--;
         state.totalPrice -= findItem.price;
+        state.totalCount = state.items.reduce((sum, obj) => {
+        return obj.count + sum
+      }, 0)
       },
     removeItem(state, {payload}) {
         const findItem = state.items.find(obj => {
@@ -48,6 +51,9 @@ export const cartSlice = createSlice({
           (obj.size !== payload.size) ||
           (obj.type !== payload.type))
         });
+        state.totalCount = state.items.reduce((sum, obj) => {
+        return obj.count + sum
+      }, 0);
       },
     clearItem(state){
       state.items=[],

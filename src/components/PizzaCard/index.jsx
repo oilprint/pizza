@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { addItem } from '../../redux/slices/cartSlice';
 
 import styles from './PizzaCard.module.scss';
 
-const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
+const PizzaCard = ({ id, title, description, imageUrl, types, price, bigImageUrl }) => {
   const [typePizza, setTypePizza] = useState(0);
   const dispatch = useDispatch();
 
@@ -37,6 +38,7 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
       id,
       title: title,
       imageUrl,
+      bigImageUrl,
       price: selectedPrice,
       type: typeNames[typePizza],
       size: selectedSize,
@@ -47,7 +49,7 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
 
   return (
     <article className={styles.pizzaCard}>
-      <a href="#" className={styles.pizzaCard__link}>
+      <Link to={`/pizza/${id}`} className={styles.pizzaCard__link}>
         <img
           className={styles.pizzaCard__img}
           src={imageUrl}
@@ -56,7 +58,7 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
           height={250}
           loading="lazy"
         />
-      </a>
+      </Link>
 
       <div className={styles.pizzaCard__content}>
         <div className={styles.pizzaCard__top}>
@@ -96,8 +98,10 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price }) => {
               );
             })}
           </ul>
-          <h2 className={styles.pizzaCard__title}>{title}</h2>
-          <p className={styles.pizzaCard__text}>{description}</p>
+          <Link to={`/pizza/${id}`} className={styles.pizzaCard__link}>
+            <h2 className={styles.pizzaCard__title}>{title}</h2>
+            <p className={styles.pizzaCard__text}>{description}</p>
+          </Link>
         </div>
 
         <div className={styles.pizzaCard__bottom}>

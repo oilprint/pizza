@@ -1,6 +1,7 @@
 import PizzaCard from "./PizzaCard";
 import CartEmpty from "./CartEmpty";
 import CartPizza from "./CartPizza";
+import SinglePizza from "./SinglePizza";
 import Sort from "./Sort";
 import Categories from "./Categories";
 import Skeleton from "./Skeleton";
@@ -17,5 +18,6 @@ export {
   CartPizza,
   BtnSmall,
   BtnLight,
-  CartEmpty
+  CartEmpty,
+  SinglePizza
 }

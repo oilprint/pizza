@@ -15,7 +15,6 @@
     justify-content: space-between;
   }
 
-
   &__img {
     max-width: 370px;
     height: auto;
@@ -25,7 +24,6 @@
   }
 
   &__info {
-
     max-width: 400px;
     width: 100%;
   }
@@ -88,7 +86,6 @@
 
       &::before {
         top: 0;
-
         content: url('./decor-category.svg');
         width: 115px;
         height: 48px;

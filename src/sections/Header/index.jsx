@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useEffect, useRef } from 'react';
 
 import { Logo } from '../../assets/images';
-import { CartIcon, SearchIcon } from '../../assets/icons';
+import { CartIcon } from '../../assets/icons';
 
 import { Search } from '../../components';
 

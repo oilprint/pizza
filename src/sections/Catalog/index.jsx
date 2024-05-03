@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import qs from 'qs';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { setCatgoryId, setFilters } from '../../redux/slices/filterSlice';
 import { fetchPizzas } from '../../redux/slices/pizzaSlice';

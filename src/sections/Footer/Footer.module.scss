@@ -1,0 +1,99 @@
+@import '../../scss/global/global';
+
+.footer {
+  padding-top: 60px;
+  padding-bottom: 20px;
+  border-top: 1px solid $lightGrey;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
+  &__links {
+    max-width: 250px;
+    width: 100%;
+    display: flex;
+    gap: 70px;
+  }
+
+  &__link {
+    transition: color 0.3s ease, outline 0.3s ease;
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:focus {
+      outline: solid 1px $accent;
+      outline-offset: 4px;
+    }
+
+    &:active {
+      color: $secondary;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    font-family: "Lato",
+      sans-serif;
+    font-weight: 400;
+    color: $grey;
+    margin-bottom: 10px;
+  }
+
+  &__linkSmall {
+    position: relative;
+    display: block;
+    text-align: center;
+    font-family: "Lato",
+      sans-serif;
+    font-weight: 400;
+    color: $grey;
+
+    &:not(:last-child) {
+      &::after {
+        position: absolute;
+        content: '';
+        width: 2px;
+        height: 16px;
+        background-color: $grey;
+        top: 4px;
+        left: -12px;
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 2px;
+        height: 16px;
+        background-color: $grey;
+        top: 4px;
+        right: -12px;
+      }
+    }
+
+    &:hover {
+      color: $accent;
+    }
+
+    &:focus {
+      outline: solid 1px $accent;
+      outline-offset: 4px;
+    }
+
+    &:active {
+      color: $secondary;
+    }
+  }
+
+}

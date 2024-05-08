@@ -3,6 +3,14 @@ import { Logo } from '../../assets/images';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
+  const handlerScrollUp = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -19,7 +27,7 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          <Link className={styles.logo}>
+          <div onClick={handlerScrollUp} className={styles.logo}>
             <img
               src={Logo}
               alt="Logo Pizzeria"
@@ -27,7 +35,7 @@ const Footer = () => {
               width={100}
               height={63}
             />
-          </Link>
+          </div>
           <div className={styles.footer__links}>
             <a className={styles.footer__link} href="mailto:mypizza@gmail.com" target="_blank">
               mypizza@gmail.com
@@ -40,8 +48,7 @@ const Footer = () => {
             Terms
           </Link>
           <Link to="/ Privacy" className={styles.footer__linkSmall}>
-            {' '}
-            Privacy{' '}
+            Privacy
           </Link>
         </div>
         <a

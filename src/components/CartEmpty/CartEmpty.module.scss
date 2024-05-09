@@ -1,0 +1,71 @@
+@import '../../scss/global/global';
+
+.cartEmpty {
+  padding: 100px 0 120px;
+
+  @media(max-width: 576px) {
+    padding: 50px 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+
+    @media(max-width: 576px) {
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    object-fit: cover;
+    height: auto;
+  }
+
+  &__info {
+    padding-top: 30px;
+    max-width: 500px;
+    width: 100%;
+    margin-left: -50px;
+
+    @media(max-width: 576px) {
+      margin-left: 0;
+      padding-top: 0;
+    }
+  }
+
+  &__title {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: $accent;
+
+    @media(max-width: 768px) {
+      font-size: 48px;
+    }
+
+    @media(max-width: 576px) {
+      text-align: center;
+    }
+  }
+
+  &__text {
+    font-family: "Lato",
+      sans-serif;
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 100px;
+
+    @media(max-width: 1024px) {
+      margin-bottom: calc(20px + 4vw);
+    }
+  }
+
+  &__button {
+    padding: 4px 40px;
+
+    @media(max-width: 576px) {
+      margin: 0 auto;
+    }
+  }
+
+
+}

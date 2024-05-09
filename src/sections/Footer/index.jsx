@@ -27,7 +27,7 @@ const Footer = () => {
               </a>
             </li>
           </ul>
-          <div onClick={handlerScrollUp} className={styles.logo}>
+          <div onClick={handlerScrollUp} className={`${styles.logo} ${styles.footer__logo}`}>
             <img
               src={Logo}
               alt="Logo Pizzeria"

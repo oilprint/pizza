@@ -5,6 +5,10 @@
   padding-bottom: 20px;
   border-top: 1px solid $lightGrey;
 
+  @media(max-width: 768px) {
+    padding-top: 30px;
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
@@ -13,6 +17,11 @@
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 30px;
+
+    @media(max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 
   &__links {
@@ -20,6 +29,16 @@
     width: 100%;
     display: flex;
     gap: 70px;
+
+    @media(max-width: 768px) {
+      order: 1;
+    }
+  }
+
+  &__logo {
+    @media(max-width: 768px) {
+      order: 0;
+    }
   }
 
   &__link {
@@ -36,6 +55,11 @@
 
     &:active {
       color: $secondary;
+    }
+
+    @media(max-width: 768px) {
+      display: block;
+      margin: 0 auto;
     }
   }
 

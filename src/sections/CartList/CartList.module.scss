@@ -19,7 +19,6 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 40px;
-
   }
 
   &__total {
@@ -31,15 +30,29 @@
     line-height: 1;
     font-weight: 700;
     font-size: 48px;
+
+    @media (max-width:576px) {
+      font-size: 42px;
+    }
   }
 
   &__totalPrice {
     color: $secondary;
   }
 
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
 
+    @media (max-width:768px) {
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 20px;
+    }
+  }
 
-
-
-
+  &__btns {
+    display: flex;
+    gap: 20px;
+  }
 }

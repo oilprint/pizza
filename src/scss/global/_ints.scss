@@ -52,6 +52,40 @@
   }
 }
 
+.accentButton {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 10px 24px;
+  border-radius: 29% 30% 25% 17% / 60% 58% 46% 34%;
+  background-color: $accent;
+  color: $white;
+  font-family: "Amatic SC",
+    sans-serif;
+  font-size: 28px;
+  line-height: 1;
+  font-weight: 700;
+  transition: background-color 0.4s,
+    outline 0.4s;
+
+  &:focus {
+    outline: solid 1px $accent;
+    outline-offset: 4px;
+  }
+
+  &:hover {
+    background-color: $secondary;
+  }
+
+  &:active {
+    background-color: $accent;
+  }
+}
+
+
 .btn {
   position: relative;
   display: flex;

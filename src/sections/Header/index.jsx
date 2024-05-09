@@ -45,7 +45,7 @@ const Header = () => {
             {isOpen ? <CloseMenuBtn /> : <OpenMenuBtn />}
           </button> */}
           <div className={styles.header__cart}>
-            <Link to="/cart" className={styles.header__button}>
+            <Link to="/cart" className={styles.accentButton}>
               <span className={styles.header__price}>
                 <span>$</span>
                 {totalPrice.toFixed(2)}

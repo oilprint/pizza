@@ -1,0 +1,27 @@
+@import '../../scss/global/global';
+
+.errorPage {
+  padding: 100px 0;
+
+  &__img {
+    object-fit: cover;
+    margin: 0 auto;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 60px;
+    color: $secondary;
+    margin-bottom: 60px;
+
+    @media(max-width:576px) {
+      font-size: 42px;
+    }
+  }
+
+  &__button {
+    margin: 0 auto;
+  }
+}

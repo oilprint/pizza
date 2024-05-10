@@ -44,7 +44,6 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price, bigImageUrl
       size: selectedSize,
     };
     dispatch(addItem(item));
-    console.log(cartItem);
   };
 
   return (

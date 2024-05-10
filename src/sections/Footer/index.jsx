@@ -36,11 +36,10 @@ const Footer = () => {
               height={63}
             />
           </div>
-          <div className={styles.footer__links}>
-            <a className={styles.footer__link} href="mailto:mypizza@gmail.com" target="_blank">
-              mypizza@gmail.com
-            </a>
-          </div>
+
+          <a className={styles.footer__link} href="mailto:mypizza@gmail.com" target="_blank">
+            mypizza@gmail.com
+          </a>
         </div>
         <div className={styles.footer__bottom}>
           <div className="footer__detail">© 2023. All rights reserved</div>

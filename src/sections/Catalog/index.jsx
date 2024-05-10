@@ -66,7 +66,6 @@ const Catalog = () => {
     if (window.location.search) {
       const params = qs.parse(window.location.search.substring(1));
       const sortType = sortList.find((obj) => obj.sortProperty === params.sortProperty);
-      console.log(params.categoryId);
 
       dispatch(
         setFilters({
@@ -86,7 +85,6 @@ const Catalog = () => {
 
     isSearch.current = false;
   }, [categoryId, sortType, searchValue]);
-  console.log(items);
 
   return (
     <section className={`${styles.section} ${styles.catalog}`}>

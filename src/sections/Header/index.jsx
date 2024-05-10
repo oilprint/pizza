@@ -26,10 +26,12 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <div className={styles.header__inner}>
-          {/* <button className={styles.mobileBtn}>
-            <SearchIcon className={styles.mobileBtn__icon} />
-          </button> */}
+        <div
+          className={
+            location.pathname !== '/cart'
+              ? `${styles.header__inner}`
+              : `${styles.header__innerWithoutSearch}`
+          }>
           {location.pathname !== '/cart' && <Search />}
           <Link to="/" className={styles.logo}>
             <img
@@ -41,19 +43,14 @@ const Header = () => {
             />
           </Link>
 
-          {/* <button onClick={() => setIsOpen((prev) => !prev)} className={styles.mobileBtn}>
-            {isOpen ? <CloseMenuBtn /> : <OpenMenuBtn />}
-          </button> */}
-          <div className={styles.header__cart}>
-            <Link to="/cart" className={styles.accentButton}>
-              <span className={styles.header__price}>
-                <span>$</span>
-                {totalPrice.toFixed(2)}
-              </span>
-              <CartIcon width={32} height={32} />
-              {items.length > 0 && <span className={styles.header__number}>{totalCount}</span>}
-            </Link>
-          </div>
+          <Link to="/cart" className={`${styles.accentButton} ${styles.header__cart}`}>
+            <span className={styles.header__price}>
+              <span>$</span>
+              {totalPrice.toFixed(2)}
+            </span>
+            <CartIcon width={32} height={32} />
+            {items.length > 0 && <span className={styles.header__number}>{totalCount}</span>}
+          </Link>
         </div>
       </div>
     </header>

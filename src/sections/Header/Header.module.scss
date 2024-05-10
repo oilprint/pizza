@@ -3,25 +3,23 @@
 .header {
 
   &__inner {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
-  }
-
-  &__cart {
-    display: flex;
-    justify-content: flex-end;
-    max-width: 230px;
-    width: 100%;
-
-    @media(max-width: 768px) {
-      max-width: 140px;
-    }
 
     @media(max-width: 576px) {
-      max-width: 75px;
+      grid-template-columns: max-content 1fr;
     }
+  }
+
+  &__innerWithoutSearch {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
   }
 
   &__button {
@@ -69,6 +67,10 @@
     color: $primary;
     font-size: 15px;
     font-weight: 700;
+  }
+
+  &__cart {
+    margin-left: auto;
   }
 }
 

@@ -10,7 +10,9 @@
   }
 
   &__top {
-    display: flex;
+    // display: flex;
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
     justify-content: space-between;
     align-items: center;
     font-size: 32px;
@@ -19,8 +21,9 @@
     margin-bottom: 30px;
 
     @media(max-width: 768px) {
-      flex-direction: column;
-      gap: 20px;
+      grid-template-columns: 1fr;
+      justify-content: center;
+      gap: 16px;
     }
   }
 
@@ -32,12 +35,14 @@
 
     @media(max-width: 768px) {
       order: 1;
+      margin: 0 auto;
     }
   }
 
   &__logo {
     @media(max-width: 768px) {
       order: 0;
+      margin: 0 auto;
     }
   }
 

@@ -12,8 +12,6 @@
   }
 
   &__input {
-    max-width: 230px;
-    width: 100%;
     padding: 12px 16px 12px 42px;
     background-color: $white;
     border: 1px solid $lightGrey;
@@ -22,10 +20,6 @@
     width: 230px;
     min-width: 70px;
     max-width: 230px;
-
-    @media(max-width: 768px) {
-      width: 100px;
-    }
 
     &::placeholder {
       font-family: "Amatic SC",

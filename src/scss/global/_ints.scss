@@ -85,7 +85,6 @@
   }
 }
 
-
 .btn {
   position: relative;
   display: flex;
@@ -93,6 +92,7 @@
   align-items: center;
   border-radius: 50% 52% 28% 61% / 39% 43% 48% 50%;
   font-size: 32px;
+  color: $primary;
   border: 1px solid transparent;
   transition: color 0.3s ease-in,
     outline 0.3s ease-in,

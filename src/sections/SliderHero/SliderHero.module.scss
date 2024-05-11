@@ -1,0 +1,71 @@
+@import '../../scss/global/global';
+
+.mySwiper {
+  height: 480px;
+
+  @media(max-width:1024px) {
+    height: 380px;
+  }
+
+  @media(max-width:768px) {
+    height: 320px;
+  }
+
+  &__slider {
+    position: relative;
+    height: 480px
+  }
+
+  &__info {
+    position: relative;
+    z-index: 2;
+    max-width: 560px;
+    width: 100%;
+    padding: 24px 42px;
+    border-radius: 24% 36% 28% 28% / 63% 20% 52% 34%;
+    background-color: rgba($bg, 0.8);
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media(max-width:768px) {
+      max-width: 300px;
+    }
+
+    @media(max-width:480px) {
+      top: 75%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    width: auto;
+
+    @media(max-width:1024px) {
+      height: 380px;
+    }
+
+    @media(max-width:768px) {
+      height: 320px;
+      width: auto;
+    }
+  }
+
+  &__title {
+    color: $accent;
+    font-size: 60px;
+    line-height: 1.1;
+
+    @media(max-width:768px) {
+      font-size: 48px;
+    }
+
+    @media(max-width:480px) {
+      font-size: 36px;
+      line-height: 1;
+    }
+  }
+}

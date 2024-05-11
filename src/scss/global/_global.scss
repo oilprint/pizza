@@ -93,8 +93,7 @@ html {
     color: $secondary;
 
     &::before {
-      top: 0;
-
+      top: 0px;
       content: url('../decor-category.svg');
       width: 115px;
       height: 48px;

@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/oilprint/oilprint/blob/main/italianPizza-cover.jpg" target="_blank" align="center" style="width: 100%" />
+<img src="https://github.com/oilprint/oilprint/blob/main/italianPizza-cover.jpg" align="center" style="width: 100%" />
 </div>  
 
 # [go to website](https://italian-pizza-eta.vercel.app/)

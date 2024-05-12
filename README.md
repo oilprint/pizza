@@ -12,21 +12,15 @@ Italian Pizza is a web application for ordering delicious pizzas online, providi
  <h3> 🛠️📱 Functionality: </h3>  
 
 💠 Wide Range of Selection: Italian Pizza  offers a diverse menu of pizzas with various toppings and flavors, ensuring there's something for everyone. From classic Margherita to gourmet specialties, we cater to all tastes.
-
 💠 User Experience: We have designed an intuitive and user-friendly interface that guarantees a seamless and enjoyable browsing experience for all users. Whether you're a tech-savvy individual or a first-time pizza enthusiast, PizzaPal makes ordering easy and fun.
-
 💠 Order Management: Customers can effortlessly add pizzas to their cart, customize sizes, and manage their orders before finalizing their purchase. Our streamlined checkout process ensures a quick and efficient transaction every time.
-
 💠 Adaptive Design: PizzaPal is built using the latest web technologies, including React and SCSS, to deliver a visually appealing and responsive design. Whether you're accessing the site from a desktop, tablet, or smartphone, PizzaPal adapts to provide an optimal viewing experience.
 
  <h3> 🛠️  Technologies:  </h3>  
 
 💠 React: Utilized for creating dynamic and interactive user interfaces.
-
 💠 HTML/CSS: Employed for structuring the website and implementing custom styles.
-
 💠 SCSS: Used for styling and maintaining modular, reusable stylesheets.
-
 💠 React Router: Implemented for seamless navigation between different sections of the application.
 
 

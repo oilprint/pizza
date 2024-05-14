@@ -20,12 +20,6 @@ const PizzaCard = ({ id, title, description, imageUrl, types, price, bigImageUrl
     (obj) => obj.id === id && obj.type === typeNames[typePizza] && obj.size === selectedSize,
   );
 
-  // const cartItem = useSelector((state) =>
-  //   state.cart.items.find(
-  //     (obj) => obj.id === id && obj.type === typePizza && obj.size === selectedSize
-  //   ),
-  // );
-
   const addedCount = cartItem ? cartItem.count : 0;
 
   const handleSizeChange = (size, price) => {
